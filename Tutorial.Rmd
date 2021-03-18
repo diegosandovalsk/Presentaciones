@@ -1,13 +1,15 @@
 ---
-title: "Presentation Ninja"
-subtitle: "⚔<br/>with xaringan"
-author: "Yihui Xie"
-institute: "RStudio, PBC"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+title: "Presentación"
+subtitle: "⚔<br/> con xaringan"
+author:
+- Diego Sandoval
+- Author Two
+date: "(actualizado: `r format(Sys.time(), '%d %B %Y')`)"
+institute: "Universidad Nacional de Colombia"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: [default, metropolis, metropolis-fonts]
+    css: [default, default-fonts]
     nature:
       highlightStyle: github
       highlightLines: true
