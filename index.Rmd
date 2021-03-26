@@ -33,6 +33,9 @@ class: center, middle
 
 ### /ʃaː.'riŋ.ɡan/
 
+???
+#cOMENTARIOS
+
 ---
 class: inverse, center, middle
 
@@ -49,6 +52,10 @@ remotes::install_github("yihui/xaringan")
 ```
 
 --
+<!--
+I'm a comment.
+-->
+[//]: # (I'm a comment)
 
 You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
 
