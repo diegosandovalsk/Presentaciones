@@ -1,9 +1,8 @@
 ---
-title: "Presentación"
-subtitle: "⚔<br/> con xaringan"
+title: "Presentación Guía - Xaringan"
+subtitle: "⚔<br/>"
 author:
-- Diego Sandoval
-- Author Two
+- Diego Sandoval Skinner
 date: "(actualizado: `r format(Sys.time(), '%d %B %Y')`)"
 institute: "Universidad Nacional de Colombia"
 output:
@@ -16,16 +15,1239 @@ output:
       countIncrementalSlides: false
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+class: inverse, center, middle
+
+# Iniciando
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
 
+---
+
+class: center, middle
+
+# Atajos de teclado
+
+(Oprima `h` o `?` para desplegar la lista de atajos)
+
+---
+
+# Atajos de teclado
+
+## Desplazamiento
+  - Diapositiva anterior: `Up` - `Left` - `PageUp` - `k`.
+  
+  - Diapositiva siguiente: `Right` - `Down` - `PageDown` - `Space` - `j`.
+  
+  - Primera diapositiva: `Home` - `Inicio`.
+  
+  - Última diapositiva: `End` - `Fin`.
+  
+  - Ir a una diapositiva en específico: Nùmero de la página y luego `Return` (o `Enter`)
+
+---
+
+layout: true
+
+# Atajos de teclado
+
+## Visualización
+
+---
+
+- Modo oscuro: `b`.
+
+---
+
+- Modo reflejo: `m`.
+
+---
+
+- Clonar diapositivas: `c`.
+
+---
+
+- Modo presentador: `p`.
+
+---
+
+layout: false
+
+class: center, middle
+
+#Configuración inicial
+
+---
+
+layout: true
+
+#Configuración inicial
+
+##Elementos de presentación:
+
+`title` - `subtitle` - `author` - `institute` - `date`.
+
+Ejemplos:
+
+---
+
+1.
+``` {yaml eval = FALSE, tidy = FALSE}
+---
+title: "Presentación Guía - Xaringan"
+author: Nombre autor
+date: "dd/mm/aa"
+institute: Nombre Institución
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+---
+
+```
+
+---
+
+#IMAGEN EJEMPLO
+---
+
+2.
+``` {yaml eval = FALSE, tidy = FALSE}
+---
+title: "Presentación Guía - Xaringan"
+subtitle: "⚔<br/>"
+author:
+- Nombre primer autor
+- Nombre segundo autor
+date: "(Última actualización: `r format(Sys.time(), '%d %B %Y')`)"
+institute: Nombre Institución
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+---
+
+```
+
+---
+
+#IMAGEN EJEMPLO
+---
+
+layout: false
+
+#Configuración inicial
+
+En la sección de **`output`** se configura el **formato de salida**. Más adelante se abordará cada una de sus posibles opciones de configuración. 
+
+Si desea ver una descripción general de estas puede dirigirse a la página de ayuda de `moon_reader` en R ejecutando el comando 
+
+```{r eval=FALSE, tidy=FALSE}
+    ?xaringan::moon_reader()
+```  
+
+---
+
+class: inverse, center, middle
+
+#Diapositivas
+
+Para definir una nueva diapositiva inserte en el documento una nueva línea con tres guiones consecutivos seguidos por un salto de línea.
+
+---
+#Diapositivas
+
+Ejemplo:
+
+```{markdown}
+# Diapositiva 1
+
+Esta es la diapositiva 1
+
+--- 
+# Diapositiva 2
+  
+Esta es la diapositiva 2
+```
+---
+# Diapositiva 1
+
+Esta es la diapositiva 1
+
+---
+# Diapositiva 2
+  
+Esta es la diapositiva 2
+
+---
+
+class: inverse, center, middle
+
+#Propiedades
+
+A cada diapositiva se le pueden asignar algunas propiedades. Estas se definen al inicio de la diapositiva. Las opciones disponibles son:
+
+---
+#Propiedades
+--- 
+#Nombre: `name`
+
+La propiedad de `name` permite asignar un nombre para identificar la diapositiva actual.
+
+```{md eval = FALSE, tidy = FALSE}
+---
+name: DiapositivaUno
+
+# Diapositiva Uno
+```
+
+---
+#Propiedades 
+--- 
+## Clase: `class`
+
+La propiedad `class` le permite asignar clases de estilo CSS a una diapositiva:
+
+```{md eval = FALSE, tidy = FALSE}
+---
+class: middle, center
+# Texto centrado vertical y horizontalmente
+```
+
+---
+class: middle, center
+# Texto centrado vertical y horizontalmente
+---
+#Propiedades 
+--- 
+## Clase: `class`
+Las clases CSS definidas por defecto permiten alinear el texto de la diapositiva.
+
+Para alinear el texto verticalmente son:
+
+- `top` (Opción por defecto)
+- `middle`
+- `bottom`
+
+Para alinear el texto horizontalmente son:
+
+- `left` (Opción por defecto)
+- `center`
+- `right`
+---
+class: top, right
+# Texto arriba y a la derecha
+```{md eval = FALSE, tidy = FALSE}
+---
+class: top, right
+# Texto arriba y a la derecha
+```
+
+---
+class: bottom, center
+# Texto abajo y en el centro
+```{md eval = FALSE, tidy = FALSE}
+---
+class: bottom, center
+# Texto abajo y en el centro
+```
+
+---
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+
+La propiedad `background-image` le permite establecer la propiedad CSS de imagen de fondo para la diapositiva. La imagen puede ser un archivo local o una imagen en línea. La ruta debe colocarse dentro de url (), que es la sintaxis CSS. También puede establecer el tamaño y la posición de la imagen de fondo:
+
+```{md eval = FALSE, tidy = FALSE}
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: 500px 500px
+class: middle, center
+# Texto centrado vertical y horizontalmente con imagen de fondo
+```
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: 700px 500px
+class: middle, center
+# Texto centrado vertical y horizontalmente con imagen de fondo
+
+---
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+
+La imagen de fondo estará por defecto centrada tanto horizontal como verticalmente en la diapositiva, y se reducirá para ajustarse si es más grande que la diapositiva.
+
+Las posibles opciones para `background-size` son:
+
+- `auto`: La imagen de fondo se muestra en su tamaño original.
+
+- `cover`: Cambia el tamaño de la imagen de fondo para cubrir todo el contenedor.
+
+- `contain`: Cambie el tamaño de la imagen de fondo para asegurarse de que la imagen sea completamente visible.
+
+- *`length`* : Establece el ancho y el alto de la imagen de fondo. El primer valor establece el ancho, el segundo valor establece la altura. Si solo se proporciona un valor, el segundo se establece en `auto`.
+
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: auto
+
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **Auto**
+
+```{md eval = FALSE, tidy = FALSE}
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: auto
+
+#Propiedades 
+##Imagen de fondo: `background-image`
+```
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: cover
+
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **Cover**
+
+```{md eval = FALSE, tidy = FALSE}
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: cover
+
+#Propiedades 
+##Imagen de fondo: `background-image`
+```
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: contain
+
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **Contain**
+
+```{md eval = FALSE, tidy = FALSE}
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: contain
+
+#Propiedades 
+##Imagen de fondo: `background-image`
+```
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: 600px 700px
+
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **600px - 700px**
+
+```{md eval = FALSE, tidy = FALSE}
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: 600px 700px
+
+#Propiedades 
+##Imagen de fondo: `background-image`
+```
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: 30% 100%
+
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **30% - 100%**
+
+```{md eval = FALSE, tidy = FALSE}
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: 30% 100%
+
+#Propiedades 
+##Imagen de fondo: `background-image`
+```
+---
+#Propiedades 
+--- 
+##Conteo: `count`
+
+La propiedad `count` permite que diapositivas específicas no se incluyan en el recuento de diapositivas, este conteo se muestra de forma predeterminada en la esquina inferior derecha de la presentación de diapositivas.
+
+```{md eval = FALSE, tidy = FALSE}
+---
+  
+count: false
+Esta diapositiva no será contabilizada.
+```
+---
+count: false
+#Esta diapositiva no será contabilizada.
+---
+#Propiedades
+--- 
+##Plantilla: `template`
+
+La propiedad `template` nombra otra diapositiva que se utilizará como plantilla para la diapositiva actual:
+
+```{md eval = FALSE, tidy = FALSE}
+class: middle, center
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: cover
+name: diapositiva-uno
+
+#Primer contenido.
+--- 
+
+template: diapositiva-uno
+#Contenido agregado al contenido de diapositiva-uno
+```
+---
+class: middle, center
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: cover
+name: diapositiva-uno
+
+#Primer contenido.
+---
+template: diapositiva-uno
+#Contenido agregado al contenido de diapositiva-uno
+---
+#Propiedades
+--- 
+##Plantilla: `template`
+Tanto el contenido como las propiedades de la diapositiva de la plantilla se anteponen a la diapositiva actual, con las siguientes excepciones:
+
+- Las propiedades de `name` y `layout` no se heredan.
+- Las propiedades de `class` se fusionan, conservando el orden de clase.
+
+La propiedad de `Template` puede usarse para (aparentemente) agregar contenido a una diapositiva de forma incremental.
+---
+#Propiedades
+--- 
+## Diseño: `layout`
+La propiedad `layout` convierte la diapositiva actual en una diapositiva de diseño, que se omite de la presentación de diapositivas y sirve como la plantilla predeterminada utilizada para todas las diapositivas consecutivas siguientes:
+
+Una vez se establece en falso, deja de usarse como plantilla predeterminada.
+
+Se pueden definir varias diapositivas `layout` a lo largo de la presentación para definir una plantilla común para una serie seguida de diapositivas.
+---
+#Propiedades
+## Diseño: `layout`
+Ejemplo:
+```markdown
+class: middle, right
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+layout: true
+#Secciones
+--- 
+
+#Sección 1
+Contenido 1 - usando estilo definido
+--- 
+
+#Sección 2
+Contenido 2 - usando estilo definido
+--- 
+layout: false
+#Otro tema
+Contenido con el diseño por defecto de nuevo.
+```
+
+---
+class: middle, right
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+layout: true
+#Secciones
+---
+
+#Sección 1
+Contenido 1 - usando estilo definido.
+---
+
+#Sección 2
+Contenido 2 - usando estilo definido.
+---
+layout: false
+#Otro tema
+Contenido con el diseño por defecto de nuevo.
+---
+
+#Propiedades
+--- 
+## Excluir: `exclude`
+
+La propiedad de `exclude`, cuando se establece en `true`, oculta una diapositiva. Es una forma de filtrar esa diapositiva para que no se utilice en absoluto al momento del renderizado.
+
+```{md eval = FALSE, tidy = FALSE}
+exclude: true
+#Esta diapositiva no se va a leer.
+```
+---
+exclude: true
+
+#Esta diapositiva no se va a leer.
+---
+class: inverse, center, middle
+
+# Clases para bloques de contenido
+
+También puede asignar clases a cualquier elemento de una diapositiva. La sintaxis es `.className[content]`.
+
+---
+#Clases para bloques de contenido
+--- 
+Hay algunas clases de contenido integradas, `.left[]`, `.center[]` y `.right[]`, para alinear elementos horizontalmente en una diapositiva. Por ejemplo, para centrar una imagen:
+
+```markdown
+.center[![descripcion](imagenes/logoun.png)]
+```
+.center[![descripcion](imagenes/logoun.png)]
+---
+#Clases para bloques de contenido
+--- 
+El contenido dentro de `[]` puede ser cualquier cosa, como varios párrafos o listas. El tema predeterminado de **xaringan** proporciona cuatro clases de contenido adicionales:
+
+- `.pull-left[]` y `.pull-right[]` proporcionan un diseño de dos columnas, y las dos columnas tienen el mismo ancho.
+
+```markdown
+.pull-left[
+![una imagen](imagenes/logoun.png)
+    
+Contenido a la izquierda
+- Un item.
+    - otro item.
+    ]
+
+.pull-right[
+![una imagen](imagenes/logoun.png)
+    
+Contenido a la derecha
+- Un item.
+    - otro item.
+    ]
+```
+---
+
+.pull-left[
+![una imagen](imagenes/logoun.png)
+    
+Contenido a la izquierda
+- Un item.
+    - otro item.
+    ]
+
+.pull-right[
+![una imagen](imagenes/logoun.png)
+    
+Contenido a la derecha
+- Un item.
+    - otro item.
+    ]
+---
+#Clases para bloques de contenido
+--- 
+- `.left-column []` y `.right-column []` proporcionan un diseño de barra lateral. La barra lateral izquierda es estrecha (20% del ancho de la diapositiva) y la columna de la derecha es la columna principal (75% del ancho de la diapositiva). Si tiene varios títulos de nivel 2 (`##`) o de nivel 3 (`###`) en la columna de la izquierda, el último título se resaltará y los títulos anteriores aparecerán atenuados.
+
+```markdown
+.left-column[
+##Sección 1
+###Subsección 1
+###Subsecciòn 2
+###Subsección 3
+    ]
+.right-column[
+.center[###Subsección 3
+![una imagen](imagenes/logoun.png)]
+    
+Contenido a la derecha
+- Un item.
+    - otro item.
+    ]
+```
+
+---
+
+.left-column[
+##Sección 1
+###Subsección 1
+###Subsección 2
+###Subsección 3
+    ]
+.right-column[
+.center[###Subsección 3
+![una imagen](imagenes/logoun.png)]
+    
+Contenido a la derecha
+- Un item.
+    - otro item.
+    ]
+---
+#Clases para bloques de contenido
+
+Puede diseñar sus propias clases de contenido con código CSS, por ejemplo, si desea que el texto sea rojo a través de .red [], puede definir esto en CSS mediante:
+
+```css
+.red{ color: red; }
+```
+
+Más adelante se abordarán las opciones de diseño de estilos con CSS.
+---
+class: inverse, center, middle
+#Diapositivas incrementales
+---
+#Diapositivas incrementales
+
+Para evitar tener que duplicar el contenido si una diapositiva se va a agregar a la anterior, puede usar solo dos guiones para separar las diapositivas y esto hará que una diapositiva herede el contenido de la anterior:
+
+```markdown
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-size: cover
+#Título
+
+- elemento 1
+-- 
+
+- elemento 2
+.center[![una imagen](imagenes/logoun.png)]
+-- 
+
+- elemento 3
+```
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-size: cover
+#Título
+
+- elemento 1
+--
+
+- elemento 2
+.center[![una imagen](imagenes/logoun.png)]
+--
+
+- elemento 3
+---
+class: inverse, center, middle
+#Diapositiva de presentación
+La diapositiva de título, se genera automáticamente a partir de los metadatos YAML de su documento Rmd. Contiene el título, subtítulo, autor y fecha (todos son opcionales). 
+
+Esta diapositiva tiene las clases `inverse`, `center`, `middle` y `title-slide` por defecto.
+---
+#Diapositiva de presentación
+Si no le gusta el estilo predeterminado, puede personalizar la clase `.title-slide` o proporcionar un vector personalizado de clases a través de la opción `titleSlideClass` debajo de la opción `nature`, por ejemplo,
+
+```yaml
+--- 
+output:
+  xaringan::moon_reader:
+    nature:
+      titleSlideClass: ["right", "top", "my-title"]
+--- 
+```
+---
+#Diapositiva de presentación
+#IMAGEN EJEMPLO
+---
+#Diapositiva de presentación
+
+También puede deshabilitar la diapositiva de título automática a través de la opción seal y crear una manualmente usted mismo:
+```markdown
+--- 
+output:
+  xaringan::moon_reader:
+    seal: false
+--- 
+# Mi propio titulo
+### Autor
+Resto de contenido en la portada.
+```
+---
+#Diapositiva de presentación
+#IMAGEN EJEMPLO
+---
+class: inverse, center, middle
+#Contenido
+Formato del texto, expresiones matemáticas, enlaces, imágenes, videos, notas y comentarios.
+---
+layout: true
+#Contenido: Formato del texto
+El formato del texto funciona con la misma convención que en Markdown.
+---
+
+- **Formatos**
+```{markdown}
+ *cursiva 1*    _cursiva 2_
+ 
+ **negrita 1**   __negrita 2__
+ 
+ `code`
+ 
+ superíndice<sup>2</sup>  subíndice<sub>2</sub>
+```
+---
+
+- **Formatos**
+
+    *cursiva 1*    _cursiva 2_
+    
+    **negrita 1**   __negrita 2__
+    
+    `code`
+    
+    superíndice<sup>2</sup>  subíndice<sub>2</sub>
+
+---
+
+- **Títulos**
+
+```{markdown}
+# Título 1er nivel
+## Título 2do nivel
+### Título 3er nivel
+#### Título 4to nivel
+##### Título 5to nivel
+... y así
+```
+
+---
+
+- **Títulos**
+
+    # Título 1er nivel
+    ## Título 2do nivel
+    ### Título 3er nivel
+    #### Título 4to nivel
+    ##### Título 5to nivel
+    ... y así
+---
+
+- **Listas**
+
+    Para listas **no enumeradas** puede usar `*`, `-` o `+`:
+
+    ```md
+  `* un elemento`
+    
+        Contenido indentado
+    - un elemento
+    
+        Contenido indentado
+    + otro elemento
+    
+        Contenido indentado
+    ```
+---
+
+- **Listas**
+
+    Para listas **no enumeradas** puede usar `*`, `-` o `+`:
+    * un elemento
+    
+        Contenido indentado
+    - un elemento
+    
+        Contenido indentado
+    + otro elemento
+    
+        Contenido indentado
+
+---
+
+- **Listas**
+
+    Para listas **enumeradas** se usa un número seguido por un punto: `1.`
+
+    ```markdown
+    1. Primer elemento
+    
+        Contenido indentado número 1
+    2. Segundo elemento
+    
+        Contenido indentado número 2
+    ```
+---
+
+- **Listas**
+
+    Para listas **enumeradas** se usa un número seguido por un punto: `1.`
+    
+    1. Primer elemento
+    
+        Contenido indentado número 1
+    2. Segundo elemento
+    
+        Contenido indentado número 2
+---
+
+- **Listas**
+
+    Para crear **sub-listas**, indente la siguiente lista uniformemente por cuatro espacios    
+
+    ```markdown
+    1. primer elemento
+        * un elemento
+            - un elemento
+        + otro elemento
+    2. segundo elemento
+        * un elemento
+            - un elemento
+                + otro elemento
+    ```
+---
+
+- **Listas**
+
+    Para crear **sub-listas**, indente la siguiente lista uniformemente por cuatro espacios
+    
+1. primer elemento
+    * un elemento
+        - un elemento
+    + otro elemento
+2. segundo elemento
+    * un elemento
+        - un elemento
+            + otro elemento
+
+---
+layout: false
+#Contenido: Expresiones matemáticas
+Puede generar expresiones matemáticas siguiendo el lenguaje estándar de LaTex. Para esto, debe escribir el código fuente **en medio de un par de signos de peso**, por ejemplo, 
+
+```rmd
+$a \lambda - \sum_{i=1}^n{x_i^2 +	y_i^3} = \frac{24 \theta}{5}$
+```
+
+Produce: $a \lambda - \sum_{i=1}^n{x_i^2 +	y_i^3} = \frac{24 \theta}{5}$
+---
+
+#Contenido: Expresiones matemáticas
+
+O bien utilizar el **modo de visualización** con signos de peso **dobles**:
+
+```
+$$a \lambda - \sum_{i=1}^n{x_i^2 +	y_i^3} = \frac{24 \theta}{5}$$
+```
+
+Produce:
+
+$$a \lambda - \sum_{i=1}^n{x_i^2 +	y_i^3} = \frac{24 \theta}{5}$$
+---
+#Contenido: Expresiones matemáticas
+
+**Observaciones**:
+
+-	**No debe haber espacios en blanco** luego del signo `$` (o `$$`) de apertura, ni tampoco antes del signo `$` (o `$$`) de cierre.
+
+-	Si se trata de código LaTex ubicado en medio de **signos de peso sencillos** (`$ $`), dicho código debe estar escrito en **una única línea**. 
+
+- Si se usan signos de peso **dobles** (`$$` `$$`), las expresiones pueden estar en **varias líneas**, sin embargo, los signos de apertura deben estar justo al **comienzo** de una línea y los signos de cierre justo **al final** de otra línea.
+
+-	Dicho formato **no funciona en la diapositiva de título o portada**, a menos que desactive la diapositiva de título automática (`seal = FALSE`) y escriba su propia diapositiva de título.
+---
+# Contenido: Enlaces
+
+Para insertar un **enlace** la sintaxis es `[Enlace uno](link)`, por ejemplo:
+
+```{markdown}
+- [Enlace UNAL](https://unal.edu.co/)
+```
+
+- [Enlace UNAL](https://unal.edu.co/)
+
+---
+# Contenido: Imágenes web
+Para insertar un archivo de **imagen** desde la **web** la sintaxis es,
+
+`![Imagen web](www.link-imagen.jpg)`
+
+Por ejemplo:
+
+```{markdown}
+![Imagen web](https://unal.edu.co/typo3temp/_processed_/3/8/csm_17-fauna-en-jardin-botanico-de-la-sede-caribe_02_078e0fac2d.jpg)
+```
+
+También es posible insertar, por ejemplo, archivos **GIF**:
+
+```{markdown}
+![GIF web](http://www.autoevaluacion.unal.edu.co/web/images/2.gif)
+```
+
+---
+# Contenido: Imágenes web
+
+![Imagen web](https://unal.edu.co/typo3temp/_processed_/3/8/csm_17-fauna-en-jardin-botanico-de-la-sede-caribe_02_078e0fac2d.jpg)
+---
+# Contenido: Imágenes web
+
+![GIF web](http://www.autoevaluacion.unal.edu.co/web/images/2.gif)
+
+---
+# Contenido: Imágenes locales
+
+Si se desea insertar una **imagen** desde un archivo **local**, simplemente se cambia el link por la ruta de ubicación de la imagen: 
+
+`![Imagen local](D:/Desktop/Carpeta/imagen.jpg)`
+
+Por ejemplo: 
+
+```{markdown}
+![Imagen local](Imagenes/csm_17-fauna-en-jardin-botanico-de-la-sede-caribe_02_078e0fac2d.jpg)
+```
+---
+# Contenido: Imágenes locales
+
+![Imagen local](Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg)
+---
+# Contenido: Imágenes HTML
+
+Para especificar más propiedades de una imagen se hace uso de etiquetas HTML:
+
+```{html}
+<div align="center">
+<figure>
+<img src="Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg"
+     alt="Imagen con otras dimensiones"
+     width="500"
+     height="300">
+<figcaption> Descripción de la imagen. </figcaption>
+</figure>
+</div>
+```
+---
+# Contenido: Imágenes HTML
+
+Para especificar más propiedades de una imagen se hace uso de etiquetas HTML:
+
+<div align="center">
+<figure>
+<img src="Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg"
+     alt="Imagen con otras dimensiones"
+     width="500"
+     height="300">
+<figcaption> Descripción de la imagen. </figcaption>
+</figure>
+</div>
+
+---
+# Contenido: Imágenes R
+
+O hacer uso del paquete `knitr` dentro de un `R code chunk`:
+
+````markdown
+`r ''````{r, out.width='80%', fig.align='center', fig.cap='Descripción de la imagen.'}
+
+knitr::include_graphics('Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg')
+```
+````
+---
+# Contenido: Imágenes R
+
+```{r, out.width='80%', fig.align='center', fig.cap='Descripción de la imagen.'}
+knitr::include_graphics('Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg')
+```
+
+---
+# Contenido: Videos
+
+Puede incrustar videos fácilmente en una presentación xaringan. Como ejemplo, aquí están los pasos para implementar videos de YouTube:
+
+1. En una computadora, vaya al video de YouTube que desea añadir.
+2. Debajo del video, de clic en **Compartir**.
+3. Haga clic en **Incorporar**.
+4. En el cuadro que aparece, copie el código HTML.
+5. Pega el código en tu documento xaringan
+
+```{html}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ytps3018nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+---
+# Contenido: Videos
+
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ytps3018nc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+---
+# Contenido: Videos
+
+O manualmente insertar la url como:
+
+```{html}
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ytps3018nc" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+</div>
+```
+---
+# Contenido: Videos
+
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ytps3018nc" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+</div>
+---
+# Contenido: Videos
+
+Si se desea ingresar desde un archivo local:
+
+```{html}
+<div align="center">
+<video width="560" height="420" controls>
+    <source src="{{ site.baseurl }}/carpeta/video_name.mp4" type="video/mp4">
+</video>
+</div>
+```
+
+Utilice la función `autoplay` dentro de la etiqueta de video para habilitar la reproducción automática. 
+
+`<video width="560" height="420" controls autoplay>`
+
+---
+# Contenido: Videos
+
+<div align="center">
+<video width="560" height="420" controls>
+    <source src="{{ site.baseurl }}/carpeta/video_name.mp4" type="video/mp4">
+</video>
+</div>
+
+---
+# Contenido: Notas para el presentador
+
+Puede escribir notas para que las lea en el modo de presentador (presione la tecla p). 
+
+Estas notas están escritas justo debajo de tres signos de interrogación `???` después de una diapositiva.
+
+Ejemplo:
+```{markdown}
+# Contenido: Notas para el presentador
+
+# Texto
+
+Contenido.
+
+Entrar en modo presentador (clic en la tecla `p`) para ver las notas.
+
 ???
+Estas son las notas del presentador.
+```
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+La sintaxis también es Markdown, lo que significa que puede escribir cualquier elemento compatible con Markdown, como párrafos, listas, imágenes, etc. 
 
+???
+Aquí se ven las notas.
+---
+# Contenido: Notas para el presentador
+
+# Texto
+
+Contenido.
+
+Entrar en modo presentador (clic en la tecla `p`) para ver las notas.
+
+???
+Estas son las notas del presentador.
+
+---
+# Contenido: Notas para el presentador
+
+Con diapositivas incrementales, las notas van después de cada incremento.
+
+```{markdown}
+# Contenido: Notas para el presentador
+
+# Texto
+
+Contenido.
+
+Entrar en modo presentador (clic en la tecla `p`) para ver las notas.
+
+???
+Notas contenido
+
+-- 
+ 
+Contenido añadido
+???
+Notas contenido añadido
+```
+---
+# Contenido: Notas para el presentador
+
+# Texto
+
+Contenido.
+
+Entrar en modo presentador (clic en la tecla `p`) para ver las notas.
+
+???
+Notas contenido
+
+--
+
+Contenido añadido
+???
+Notas contenido añadido
+---
+
+# Contenido: Notas para el presentador
+
+Las teclas `c` y `p` son muy útiles cuando **pretende presentar su propia computadora conectada a una segunda pantalla** (como un proyector). 
+
+En la segunda pantalla, puede mostrar las diapositivas normales, luego, con la tecla `c` clona las diapositivas en la pantalla de su propia computadora y allí usa el modo de presentador (tecla `p`). 
+
+De esta manera, solo usted puede ver el modo de presentador, lo que significa que solo usted puede ver las notas del presentador y la hora, y obtener una vista previa de la siguiente diapositiva. 
+
+Puede presionar `t` para reiniciar el temporizador en cualquier momento.
+
+---
+# Contenido: Comentarios
+
+Si desea dejar comentarios en el documento de R Markdown puede hacerlo utilizando cualquiera de las siguientes dos notaciones. 
+
+a. HTML 
+```{markdown}
+<!--
+comentario.
+-->
+```
+
+Para convertir un trozo de texto automaticamente en formato de comentario HTML puede seleccionarlo y oprimir las teclas `CTRL/CMD + Shift + C`.
+
+b. Link vacío
+```{markdown}
+[//]: # (comentario)
+```
+
+El comentario de estilo HTML estará disponible en la fuente de la página en el navegador, mientras que el enlace vacío no lo estará.
+
+---
+class: inverse, center, middle
+
+#Código R
+
+Chunks, resaltar código, añadir gráficas, incluir tablas.
+---
+#Código R: R code chunks
+
+Los chunk son fragmentos de código R que puede implementar dentro de sus diapositivas para, por ejemplo, producir resultados de texto, tablas o gráficos.
+
+Puede insertar rápidamente fragmentos como estos en su archivo con
+
+* El atajo de teclado `Ctrl + Alt + I` (OS X: Cmd + Opción + I)
+* El comando 'Insertar chunk' en la barra de herramientas del editor
+o escribiendo los delimitadores de fragmentos: 
+
+
+````markdown
+`r ''````{r}
+
+```
+````
+
+Cuando renderice su archivo .Rmd, R Markdown ejecutará cada fragmento de código e incrustará los resultados debajo del fragmento de código en su presentación final.
+
+---
+
+#Código R: R code chunks
+
+La salida de los chunk se puede personalizar con las opciones de `knitr`, argumentos establecidos en el `{}` del encabezado. Algunos argumentos posibles son:
+
+`{r, include = , echo = , message = , warning = , ...}`
+
+* `include = FALSE` evita que el código y los resultados aparezcan en la presentación. R Markdown aún ejecuta el código en el chunk y los resultados pueden ser utilizados por otros chunks.
+* `echo = FALSE` evita que el código, pero no los resultados, aparezcan en el archivo terminado. Este argumento es útil para incrustar figuras.
+* `message = FALSE` evita que los mensajes generados por el código aparezcan en la presentación.
+* `warning = FALSE` evita que las advertencias generadas por el código aparezcan en la presentación.
+* `fig.cap` = "..." agrega una descripción a los resultados gráficos.
+
+Para ver más información [RStudio](https://rmarkdown.rstudio.com/lesson-3.html).
+---
+#Código R: Resaltar código
+
+La opción `highlightLines: true` of `nature` resaltará las líneas de código que están envueltas en `{{}}`.
+
+```{yaml}
+output:
+  xaringan::moon_reader:
+    nature:
+      highlightLines: true
+```
+
+Ejemplo:
+
+.pull-left[
+````markdown
+`r ''````{r}
+x <- c(1, 1.5, 3, 2, 2.3, 2,8)
+y <- rnorm(7, 5)
+{{z <- x + y - rnorm(7)}}
+```
+````
+]
+
+.pull-right[
+
+```{r}
+
+x <- c(1, 1.5, 3, 2, 2.3, 2,8)
+y <- rnorm(7, 5)
+{{z <- x + y - rnorm(7)}}
+```
+]
+---
+#Código R: Gráficas
+
+Puede implementar el código R para generar gráficos y ajustar el tamaño de la figura con fig.height y fig.width en las opciones del chunk:
+
+````markdown
+`r ''````{r, fig.height=4, fig.width=5, fig.align='center'}
+library(ggplot2)
+ggplot(cars, aes(speed, dist)) + geom_point() + theme_bw()
+```
+````
+---
+#Código R: Gráficas
+
+```{r, fig.height=5, fig.width=5, fig.align='center', warning = FALSE}
+library(ggplot2)
+ggplot(cars, aes(speed, dist)) + geom_point() + theme_bw()
+```
+---
+#Código R: Tablas
+
+Si desea generar una tabla, asegúrese de que esté en formato HTML (en lugar de Markdown u otros formatos), por ejemplo,
+
+````markdown
+`r ''````{r}
+knitr::kable(head(iris), format = 'html')
+```
+````
+---
+#Código R: Tablas
+
+```{r}
+knitr::kable(head(iris), format = 'html')
+```
 ---
 class: center, middle
 
@@ -399,6 +1621,7 @@ It is valid R code so you can run it. Note that `{{}}` can wrap an R expression 
 
 An example of using the trailing comment `#<<` to highlight lines:
 
+
 ````markdown
 `r ''````{r tidy=FALSE}
 library(ggplot2)
@@ -408,7 +1631,6 @@ ggplot(mtcars) +
   geom_smooth()    #<<
 ```
 ````
-
 Output:
 
 ```{r tidy=FALSE, eval=FALSE}
