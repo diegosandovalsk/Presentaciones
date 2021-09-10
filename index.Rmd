@@ -262,7 +262,7 @@ La propiedad `background-image` le permite establecer la propiedad CSS de imagen
 ---
 background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
-background-size: 500px 500px
+background-size: 700px 500px
 class: middle, center
 # Texto centrado vertical y horizontalmente con imagen de fondo
 ```
@@ -291,14 +291,10 @@ Las posibles opciones para `background-size` son:
 - *`length`* : Establece el ancho y el alto de la imagen de fondo. El primer valor establece el ancho, el segundo valor establece la altura. Si solo se proporciona un valor, el segundo se establece en `auto`.
 
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
-background-position: center
-background-size: auto
-
 #Propiedades 
 --- 
 ##Imagen de fondo: `background-image`
-background-size: **Auto**
+background-size: **auto**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
@@ -309,15 +305,22 @@ background-size: auto
 #Propiedades 
 ##Imagen de fondo: `background-image`
 ```
+
 ---
 background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
-background-size: cover
+background-size: auto
 
 #Propiedades 
 --- 
 ##Imagen de fondo: `background-image`
-background-size: **Cover**
+background-size: **auto**
+
+---
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **cover**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
@@ -328,15 +331,22 @@ background-size: cover
 #Propiedades 
 ##Imagen de fondo: `background-image`
 ```
+
 ---
 background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
-background-size: contain
+background-size: cover
 
 #Propiedades 
 --- 
 ##Imagen de fondo: `background-image`
-background-size: **Contain**
+background-size: **cover**
+
+---
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **contain**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
@@ -347,15 +357,22 @@ background-size: contain
 #Propiedades 
 ##Imagen de fondo: `background-image`
 ```
+
 ---
 background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
-background-size: 600px 700px
+background-size: contain
 
 #Propiedades 
 --- 
 ##Imagen de fondo: `background-image`
-background-size: **600px - 700px**
+background-size: **contain**
+
+---
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **600px 700px**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
@@ -366,15 +383,22 @@ background-size: 600px 700px
 #Propiedades 
 ##Imagen de fondo: `background-image`
 ```
+
 ---
 background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
-background-size: 30% 100%
+background-size: 600px 700px
 
 #Propiedades 
 --- 
 ##Imagen de fondo: `background-image`
-background-size: **30% - 100%**
+background-size: **600px 700px**
+
+---
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **30% 100%**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
@@ -385,6 +409,17 @@ background-size: 30% 100%
 #Propiedades 
 ##Imagen de fondo: `background-image`
 ```
+
+---
+background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-position: center
+background-size: 30% 100%
+
+#Propiedades 
+--- 
+##Imagen de fondo: `background-image`
+background-size: **30% 100%**
+
 ---
 #Propiedades 
 --- 
@@ -1237,17 +1272,276 @@ ggplot(cars, aes(speed, dist)) + geom_point() + theme_bw()
 
 Si desea generar una tabla, asegúrese de que esté en formato HTML (en lugar de Markdown u otros formatos), por ejemplo,
 
-````markdown
-`r ''````{r}
+```markdown
+
 knitr::kable(head(iris), format = 'html')
 ```
-````
 ---
 #Código R: Tablas
 
 ```{r}
 knitr::kable(head(iris), format = 'html')
 ```
+---
+class: inverse, center, middle
+
+#Opciones de salida: 
+## `output`
+
+css, `self contained`, `seal`, `chakra`, `nature`.
+
+---
+#Opciones de salida
+
+Las opciones de salida o `output` son un conjunto de argumentos y configuraciones que podemos definir para modificar el formato de salida o de visualización del documento.
+
+Estas opciones permiten personalizar completamente:
+- El diseño de las diapositivas
+- Las fuentes del texto
+- La diapositiva de titulo
+
+Entre otras opciones más, como la reproducción automatica de la presentación.
+
+---
+#Opciones de salida: `output`
+
+Esta parametrización se define en la sección de YAML, ubicada al inicio del documento y justo después de la sentencia `ouput:` :
+
+``` yaml
+title: "Presentación"
+subtitle: "⚔<br/> con xaringan"
+author:
+- Diego Sandoval
+- Author Two
+institute: "Universidad Nacional de Colombia"
+date: "(actualizado: `r format(Sys.time(), '%d %B %Y')`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, default-fonts]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+```
+---
+#Opciones de salida: Estilos CSS
+
+`css = c("default", "default-fonts", "estilos/textorojo.css")`
+
+Este argumento recibe un conjunto de rutas de archivos CSS que se usarán para darle estilo a la presentación.
+
+Si el vector de caracteres CSS contiene un valor que no termina con `.css`, se supone que hace referencia a alguno de los archivos de estilo CSS que vienen incluidos en Xaringan.
+
+Para conocer todos los estilos CSS disponibles por defecto, utilice:
+
+```{r eval = FALSE, warning = FALSE}
+names(xaringan:::list_css())
+```
+
+---
+#Opciones de salida: Estilos CSS
+```{r, R.options=list(width = 70)}
+names(xaringan:::list_css())
+```
+---
+#Opciones de salida: Estilos CSS
+
+## Ejemplos
+
+- `css = c("metropolis", "metropolis-fonts")`
+--
+
+- `css = c("rladies-fonts", "rladies")`
+--
+
+- `css = c("uio-fonts", "uio")`
+
+---
+# Opciones de salida: `seal`
+
+`seal = TRUE`
+
+Como vimos en la sección de diapositiva de titulo, este argumento nos permite decidir si generar una diapositiva de título automáticamente usando los metadatos YAML del documento R Markdown o, si es FALSE, nosotros mismos escribir la diapositiva de título.
+
+---
+# Opciones de salida: `chakra`
+
+`chakra = "https://remarkjs.com/downloads/remark-latest.min.js"`
+
+Este argumento recibe una ruta a la libreria de remark.js (puede ser local o remota).
+
+Tenga en cuenta que si utiliza la última versión remota predeterminada de remark.js, sus diapositivas no funcionarán cuando no tenga acceso a internet. 
+
+También puede dejar de funcionar después de que se publique una versión más reciente de remark.js. Si estos problemas le preocupan, debe descargar remark.js localmente (por ejemplo, a través de `summon_remark()`) y usar la versión local en su lugar.
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+--
+
+- **`ratio`**
+
+    Establece la proporción de la dimensión de la pantalla para presentar las diapositivas. Opciones: `'16:9'`, `'4:3'`, ... .
+---
+
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`navigation = list(...)`** 
+
+    Definir opciones de navegación: 
+
+    - `scroll = TRUE` : Habilita o deshabilita la navegación usando scroll.
+    - `touch = TRUE` : Habilita o deshabilita la navegación usando el toque. (touch)
+    - `click = FALSE` : Habilita o deshabilita la navegación usando el clic.
+
+---
+
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`timer = list(...)`**
+
+    Definir opciones de temporizador:
+
+    - `startOnChange = TRUE` : Iniciar temporizador cuando ocurra el primer cambio.
+    - `resetable = TRUE` : Habilita o deshabilita la opción de reiniciar el temporizador.
+    - `enabled = TRUE` : Habilita o deshabilita el temporizador.
+
+---
+
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`slideNumberFormat = 'Slide %current% of %total%'`**
+
+    Personalizar la etiqueta del número de la diapositiva. Por defecto, remark.js ofrece dos elementos clave `%current%` y `%total%`.
+    
+---
+
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`slideNumberFormat = 'Slide %current% of %total%'`**
+    
+    ``` {yaml eval = FALSE, tidy = FALSE}
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      # Ejemplos
+      slideNumberFormat: "%current%"                  # 12
+      slideNumberFormat: "Slide %current% of %total%" # Slide 12 of 42
+      slideNumberFormat: "%current%/%total%"           # 12/42 
+      slideNumberFormat: "Diapositiva %current% de %total%" 
+      # Diapositiva 12 de 42
+---
+
+```
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`countIncrementalSlides = TRUE`**
+
+    Habilita o deshabilita el recuento de diapositivas incrementales en el conteo de las diapositivas
+ 
+- **`includePresenterNotes = TRUE`**
+
+    El valor indica si las notas del presentador deben estar visibles o no.
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`highlightLanguage`**
+
+    Establecer el idioma predeterminado para el resaltado de sintaxis del código.
+    - Predeterminado: `no-highlight`
+    - Alternativas: `'javascript'` , `'ruby'` , `'python'` , ... .
+    - Para deshabilitar el resaltado automático, use `no-highlight`
+    
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+ 
+- **`highlightStyle`**
+
+    Establecer estilo de resaltado.
+    - Predeterminado: default.
+    - Alternativas: arta, ascetic, dark, default, far, github, googlecode, idea, ir-black, magula, monokai, rainbow, solarized-dark, solarized-light, sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright, tomorrow-night, tomorrow-night-eighties, vs, zenburn.
+    
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`highlightLines = FALSE`**
+
+    Resalte el fondo de las líneas de código con el prefijo `*`.
+    
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`autoplay = list(interval = N, loop = TRUE)`**
+
+    Puede establecer `autoplay` en un número `N` de milisegundos para que las diapositivas se reproduzcan automáticamente cada `N` milisegundos; alternativamente, la reproducción automática puede ser una lista de la forma `list(interval = N, loop = TRUE)`, por lo que las diapositivas irán a la página siguiente cada `N` milisegundos y, opcionalmente, volverán a la primera página para reiniciar la reproducción cuando `loop = TRUE`.
+
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`countdown`**
+
+    También puede establecer `countdown` en un número (el número de milisegundos) para incluir un temporizador de cuenta regresiva en cada diapositiva. Si usa `autoplay`, puede configurar opcionalmente `countdown = TRUE` para sincronizar la cuenta regresiva con el tiempo de reproducción automática.
+
+---
+# Opciones de salida: `nature`
+
+`nature = list(ratio = '16:9', navigation = list(scroll = TRUE), ...)`
+
+Este conjunto de opciones permite definir y/o modificar una amplia gama de propiedades de la presentación.
+
+- **`titleSlideClass`**
+
+    Para modificar el conjunto de clases aplicadas a la diapositiva de título, puede establecer opcionalmente `titleSlideClass` como un vector de clases; el valor predeterminado es `c("center", "middle", "inverse")`.
+---
+class: inverse, center, middle
+#Intro a CSS
+Sintaxis, ejemplos.
 ---
 class: center, middle
 
