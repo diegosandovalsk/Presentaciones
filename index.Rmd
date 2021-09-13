@@ -947,12 +947,12 @@ Si se desea insertar una **imagen** desde un archivo **local**, simplemente se c
 Por ejemplo: 
 
 ```{markdown}
-![Imagen local](Imagenes/csm_17-fauna-en-jardin-botanico-de-la-sede-caribe_02_078e0fac2d.jpg)
+![Imagen local](imagenes/csm_17-fauna-en-jardin-botanico-de-la-sede-caribe_02_078e0fac2d.jpg)
 ```
 ---
 # Contenido: Imágenes locales
 
-![Imagen local](Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg)
+![Imagen local](imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg)
 ---
 # Contenido: Imágenes HTML
 
@@ -961,7 +961,7 @@ Para especificar más propiedades de una imagen se hace uso de etiquetas HTML:
 ```{html}
 <div align="center">
 <figure>
-<img src="Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg"
+<img src="imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg"
      alt="Imagen con otras dimensiones"
      width="500"
      height="300">
@@ -976,7 +976,7 @@ Para especificar más propiedades de una imagen se hace uso de etiquetas HTML:
 
 <div align="center">
 <figure>
-<img src="Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg"
+<img src="imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg"
      alt="Imagen con otras dimensiones"
      width="500"
      height="300">
@@ -992,14 +992,14 @@ O hacer uso del paquete `knitr` dentro de un `R code chunk`:
 ````markdown
 `r ''````{r, out.width='80%', fig.align='center', fig.cap='Descripción de la imagen.'}
 
-knitr::include_graphics('Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg')
+knitr::include_graphics('imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg')
 ```
 ````
 ---
 # Contenido: Imágenes R
 
 ```{r, out.width='80%', fig.align='center', fig.cap='Descripción de la imagen.'}
-knitr::include_graphics('Imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg')
+knitr::include_graphics('imagenes/fauna-en-jardin-botanico-de-la-sede-caribe.jpg')
 ```
 
 ---
