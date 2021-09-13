@@ -260,14 +260,14 @@ La propiedad `background-image` le permite establecer la propiedad CSS de imagen
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: 700px 500px
 class: middle, center
 # Texto centrado vertical y horizontalmente con imagen de fondo
 ```
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: 700px 500px
 class: middle, center
@@ -298,7 +298,7 @@ background-size: **auto**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: auto
 
@@ -307,7 +307,7 @@ background-size: auto
 ```
 
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: auto
 
@@ -324,7 +324,7 @@ background-size: **cover**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: cover
 
@@ -333,7 +333,7 @@ background-size: cover
 ```
 
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: cover
 
@@ -350,7 +350,7 @@ background-size: **contain**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: contain
 
@@ -359,7 +359,7 @@ background-size: contain
 ```
 
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: contain
 
@@ -376,7 +376,7 @@ background-size: **600px 700px**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: 600px 700px
 
@@ -385,7 +385,7 @@ background-size: 600px 700px
 ```
 
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: 600px 700px
 
@@ -402,7 +402,7 @@ background-size: **30% 100%**
 
 ```{md eval = FALSE, tidy = FALSE}
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: 30% 100%
 
@@ -411,7 +411,7 @@ background-size: 30% 100%
 ```
 
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: 30% 100%
 
@@ -445,7 +445,7 @@ La propiedad `template` nombra otra diapositiva que se utilizará como plantilla
 
 ```{md eval = FALSE, tidy = FALSE}
 class: middle, center
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: cover
 name: diapositiva-uno
@@ -458,7 +458,7 @@ template: diapositiva-uno
 ```
 ---
 class: middle, center
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-position: center
 background-size: cover
 name: diapositiva-uno
@@ -492,7 +492,7 @@ Se pueden definir varias diapositivas `layout` a lo largo de la presentación pa
 Ejemplo:
 ```markdown
 class: middle, right
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 layout: true
 #Secciones
 --- 
@@ -511,7 +511,7 @@ Contenido con el diseño por defecto de nuevo.
 
 ---
 class: middle, right
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 layout: true
 #Secciones
 ---
@@ -656,7 +656,7 @@ class: inverse, center, middle
 Para evitar tener que duplicar el contenido si una diapositiva se va a agregar a la anterior, puede usar solo dos guiones para separar las diapositivas y esto hará que una diapositiva herede el contenido de la anterior:
 
 ```markdown
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-size: cover
 #Título
 
@@ -670,7 +670,7 @@ background-size: cover
 - elemento 3
 ```
 ---
-background-image: url("Imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
+background-image: url("imagenes/fondo-pintura-acuarela-rosa-vibrante_53876-58930.jpg")
 background-size: cover
 #Título
 
